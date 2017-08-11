@@ -25,7 +25,7 @@ import java.util.Locale;
 
 public class Config {
 
-    public static final String VERSION = "1.9";
+    public static final String VERSION = "1.10";
 
     public static final String LOG_TAG = "jolla::";
 
