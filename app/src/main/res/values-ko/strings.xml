@@ -46,7 +46,7 @@
     <string name="downloads_complete">다운로드 완료! 플래시 준비!</string>
     <string name="downloads_failed_fileexists">다운로드 실패: 파일이 이미 있습니다</string>
     <string name="downloads_failed_http">다운로드 실패: HTTP 에러</string>
-    <string name="downloads_failed_md5">다운로드 실패: MD5 에러 - 올바르지 않은 다운로드</string>
+    <string name="downloads_failed_sha256">다운로드 실패: SHA256 에러 - 올바르지 않은 다운로드</string>
     <string name="downloads_failed_mount">다운로드 실패: 저장소 찾을 수 없음</string>
     <string name="downloads_failed_resume">다운로드 실패: 다운로드 재개 할 수 없음</string>
     <string name="downloads_failed_space">다운로드 실패: 저장소 공간 부족</string>

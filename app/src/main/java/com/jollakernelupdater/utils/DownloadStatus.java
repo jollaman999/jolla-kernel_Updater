@@ -24,7 +24,7 @@ import android.database.Cursor;
 import com.jollakernelupdater.R;
 
 public class DownloadStatus {
-    static final int ERROR_MD5_MISMATCH = 900;
+    static final int ERROR_SHA256_MISMATCH = 900;
 
     private static final int SCALE_KBYTES = 1024;
     private static final int KBYTE_THRESH = 920; //0.9kb
@@ -178,8 +178,8 @@ public class DownloadStatus {
         case DownloadManager.ERROR_UNKNOWN:
             statusTextRes = R.string.downloads_failed_unknown;
             break;
-        case DownloadStatus.ERROR_MD5_MISMATCH:
-            statusTextRes = R.string.downloads_failed_md5;
+        case DownloadStatus.ERROR_SHA256_MISMATCH:
+            statusTextRes = R.string.downloads_failed_sha256;
             break;
         default:
             statusTextRes = R.string.downloads_no_status;

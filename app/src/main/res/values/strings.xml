@@ -119,7 +119,7 @@
     <string name="downloads_failed_space">Download failed: Not enough space</string>
     <string name="downloads_failed_fileexists">Download failed: file already exists</string>
     <string name="downloads_failed_resume">Download failed: cannot resume download</string>
-    <string name="downloads_failed_md5">Download failed: MD5 error - invalid download</string>
+    <string name="downloads_failed_sha256">Download failed: SHA256 error - invalid download</string>
     <string name="downloads_failed_unknown">Download failed</string>
     <string name="downloads_none">No Downloads Found</string>
     <string name="downloads_no_status">Unable to get download status</string>

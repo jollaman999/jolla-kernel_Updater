@@ -39,9 +39,9 @@ public class Utils {
 
     private Utils() { }
 
-    private static String md5(String s) {
+    private static String sha256(String s) {
         try {
-            MessageDigest digest = MessageDigest.getInstance("MD5");
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
             digest.update(s.getBytes());
 
             return byteArrToStr(digest.digest());
@@ -51,17 +51,17 @@ public class Utils {
         return "";
     }
 
-    private static final HashMap<File, String> MD5_FILE_CACHE = new HashMap<>();
-    static String md5(File f) {
+    private static final HashMap<File, String> SHA256_FILE_CACHE = new HashMap<>();
+    static String sha256(File f) {
         if (!f.exists()) return "";
-        if (MD5_FILE_CACHE.containsKey(f)) {
-            String cachedMD5 = MD5_FILE_CACHE.get(f);
-            int cachedMD5Split = cachedMD5.indexOf(':');
-            long lastModified = Long.parseLong(cachedMD5.substring(cachedMD5Split + 1));
+        if (SHA256_FILE_CACHE.containsKey(f)) {
+            String cachedsha256 = SHA256_FILE_CACHE.get(f);
+            int cachedSHA256Split = cachedsha256.indexOf(':');
+            long lastModified = Long.parseLong(cachedsha256.substring(cachedSHA256Split + 1));
             if (lastModified == f.lastModified()) {
-                return cachedMD5.substring(0, cachedMD5Split);
+                return cachedsha256.substring(0, cachedSHA256Split);
             } else {
-                MD5_FILE_CACHE.remove(f);
+                SHA256_FILE_CACHE.remove(f);
             }
         }
 
@@ -69,7 +69,7 @@ public class Utils {
         try {
             in = new FileInputStream(f);
 
-            MessageDigest digest = MessageDigest.getInstance("MD5");
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
 
             byte[] buf = new byte[4096];
             int nRead;
@@ -77,9 +77,9 @@ public class Utils {
                 digest.update(buf, 0, nRead);
             }
 
-            String md5 = byteArrToStr(digest.digest());
-            MD5_FILE_CACHE.put(f, md5 + ":" + Long.toString(f.lastModified()));
-            return md5;
+            String sha256 = byteArrToStr(digest.digest());
+            SHA256_FILE_CACHE.put(f, sha256 + ":" + Long.toString(f.lastModified()));
+            return sha256;
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -133,7 +133,7 @@ public class Utils {
         if (deviceID != null) return deviceID;
 
         deviceID = "" + Math.random();
-        deviceID = md5(deviceID);
+        deviceID = sha256(deviceID);
 
         return deviceID;
     }

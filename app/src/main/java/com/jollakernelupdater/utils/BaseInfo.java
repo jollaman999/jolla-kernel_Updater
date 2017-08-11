@@ -50,13 +50,13 @@ public abstract class BaseInfo implements Parcelable, Serializable {
     private static final String KEY_NAME = "name";
     private static final String KEY_VERSION = "version";
     private static final String KEY_URL = "url";
-    private static final String KEY_MD5 = "md5";
+    private static final String KEY_SHA256 = "sha256";
     private static final String KEY_DATE = "date";
 
     public String name;
     public String version;
     public String url;
-    public String md5;
+    public String sha256;
     public Date date;
 
     BaseInfo() {
@@ -66,7 +66,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
         i.putExtra(getNameKey(), name);
         i.putExtra(KEY_VERSION, version);
         i.putExtra(KEY_URL, url);
-        i.putExtra(KEY_MD5, md5);
+        i.putExtra(KEY_SHA256, sha256);
         i.putExtra(KEY_DATE, Utils.formatDate(date));
     }
 
@@ -74,7 +74,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
         editor.putString(getNameKey() + "_info_" + KEY_NAME, name);
         editor.putString(getNameKey() + "_info_" + KEY_VERSION, version);
         editor.putString(getNameKey() + "_info_" + KEY_URL, url);
-        editor.putString(getNameKey() + "_info_" + KEY_MD5, md5);
+        editor.putString(getNameKey() + "_info_" + KEY_SHA256, sha256);
         editor.putString(getNameKey() + "_info_" + KEY_DATE, Utils.formatDate(date));
     }
 
@@ -88,7 +88,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
         dest.writeString(name);
         dest.writeString(version);
         dest.writeString(url);
-        dest.writeString(md5);
+        dest.writeString(sha256);
         dest.writeLong(date.getTime());
     }
 
@@ -176,7 +176,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
     public int checkDownloadedFile() {
         File file = getDownloadFile();
         if (!file.exists()) return DownloadManager.ERROR_FILE_ERROR;
-        if (!Utils.md5(file).equalsIgnoreCase(md5)) return DownloadStatus.ERROR_MD5_MISMATCH;
+        if (!Utils.sha256(file).equalsIgnoreCase(sha256)) return DownloadStatus.ERROR_SHA256_MISMATCH;
         return 0;
     }
 
@@ -293,7 +293,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
                 info.name = json.getString(info.getNameKey());
                 info.version = json.getString(KEY_VERSION);
                 info.url = json.getString(KEY_URL);
-                info.md5 = json.getString(KEY_MD5);
+                info.sha256 = json.getString(KEY_SHA256);
                 info.date = Utils.parseDate(json.getString(KEY_DATE));
 
                 return info;
@@ -313,7 +313,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
                 info.name = bundle.getString(info.getNameKey());
                 info.version = bundle.getString(KEY_VERSION);
                 info.url = bundle.getString(KEY_URL);
-                info.md5 = bundle.getString(KEY_MD5);
+                info.sha256 = bundle.getString(KEY_SHA256);
                 info.date = Utils.parseDate(bundle.getString(KEY_DATE));
 
                 return info;
@@ -335,7 +335,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
                 info.name = prefs.getString(info.getNameKey() + "_info_" + KEY_NAME, null);
                 info.version = prefs.getString(info.getNameKey() + "_info_" + KEY_VERSION, null);
                 info.url = prefs.getString(info.getNameKey() + "_info_" + KEY_URL, null);
-                info.md5 = prefs.getString(info.getNameKey() + "_info_" + KEY_MD5, null);
+                info.sha256 = prefs.getString(info.getNameKey() + "_info_" + KEY_SHA256, null);
                 info.date = Utils.parseDate(prefs.getString(info.getNameKey() + "_info_" + KEY_DATE, null));
 
                 return info;
@@ -362,7 +362,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
                         info.name = source.readString();
                         info.version = source.readString();
                         info.url = source.readString();
-                        info.md5 = source.readString();
+                        info.sha256 = source.readString();
                         info.date = new Date(source.readLong());
 
                         return info;
@@ -390,7 +390,7 @@ public abstract class BaseInfo implements Parcelable, Serializable {
                 editor.remove(info.getNameKey() + "_info_" + KEY_NAME);
                 editor.remove(info.getNameKey() + "_info_" + KEY_VERSION);
                 editor.remove(info.getNameKey() + "_info_" + KEY_URL);
-                editor.remove(info.getNameKey() + "_info_" + KEY_MD5);
+                editor.remove(info.getNameKey() + "_info_" + KEY_SHA256);
                 editor.remove(info.getNameKey() + "_info_" + KEY_DATE);
             } catch (Exception e) {
                 e.printStackTrace();
