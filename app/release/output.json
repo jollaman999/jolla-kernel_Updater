@@ -1,1 +1,1 @@
-[{"outputType":{"type":"APK"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":10},"outputFile":{"path":"M:\\AndroidStudio\\ota-updater-2.0-master\\app\\release\\app-release.apk"},"properties":{"packageId":"com.jollakernelupdater","split":""}}]
+[{"outputType":{"type":"APK"},"apkInfo":{"type":"MAIN","splits":[],"versionCode":10},"path":"app-release.apk","properties":{"packageId":"com.jollakernelupdater","split":"","minSdkVersion":"23"}}]

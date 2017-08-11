@@ -44,7 +44,7 @@ public abstract class BaseStaticTextActivity extends Activity {
         }
 
         BufferedReader in = null;
-        StringBuilder data = null;
+        StringBuilder data;
         try {
             data = new StringBuilder();
             char[] buf = new char[4096];

@@ -162,9 +162,9 @@ public class DownloadBarFragment extends Fragment {
         View view = inflater.inflate(R.layout.download_bar, container, false);
 
         kernelContainer = view.findViewById(R.id.download_kernel_container);
-        kernelProgressBar = (ProgressBar) view.findViewById(R.id.download_kernel_progress_bar);
-        kernelProgressText = (TextView) view.findViewById(R.id.download_kernel_progress_text);
-        kernelStatusText = (TextView) view.findViewById(R.id.download_kernel_status);
+        kernelProgressBar = view.findViewById(R.id.download_kernel_progress_bar);
+        kernelProgressText = view.findViewById(R.id.download_kernel_progress_text);
+        kernelStatusText = view.findViewById(R.id.download_kernel_status);
         View kernelCancelButton = view.findViewById(R.id.download_kernel_cancel);
 
         kernelContainer.setOnClickListener(new View.OnClickListener() {
@@ -341,14 +341,14 @@ public class DownloadBarFragment extends Fragment {
         @SuppressLint("InflateParams")
         View view = inflater.inflate(R.layout.download_dialog, null);
 
-        TextView titleView = (TextView) view.findViewById(R.id.download_dlg_title);
+        TextView titleView = view.findViewById(R.id.download_dlg_title);
 
         final BaseInfo info = initStatus.getInfo();
         titleView.setText(ctx.getString(info.getDownloadingTitle(), info.name, info.version));
 
-        progressText = (TextView) view.findViewById(R.id.download_dlg_progress_text);
-        statusText = (TextView) view.findViewById(R.id.download_dlg_status);
-        progressBar = (ProgressBar) view.findViewById(R.id.download_dlg_progress_bar);
+        progressText = view.findViewById(R.id.download_dlg_progress_text);
+        statusText = view.findViewById(R.id.download_dlg_status);
+        progressBar = view.findViewById(R.id.download_dlg_progress_bar);
 
         DownloadStatus status = DownloadStatus.forDownloadID(ctx, dm, downloadID);
         builder = new AlertDialog.Builder(ctx);
