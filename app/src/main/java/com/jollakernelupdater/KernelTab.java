@@ -18,8 +18,8 @@
 package com.jollakernelupdater;
 
 import android.app.Activity;
-import android.support.v4.app.ListFragment;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,11 +27,11 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.jollakernelupdater.utils.APIUtils;
 import com.jollakernelupdater.utils.BaseInfo;
 import com.jollakernelupdater.utils.Config;
-import com.jollakernelupdater.utils.KernelInfo;
-import com.jollakernelupdater.utils.APIUtils;
 import com.jollakernelupdater.utils.DownloadDialogCallback;
+import com.jollakernelupdater.utils.KernelInfo;
 import com.jollakernelupdater.utils.PropUtils;
 
 import org.jetbrains.annotations.NotNull;

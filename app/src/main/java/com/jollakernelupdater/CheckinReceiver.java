@@ -26,10 +26,10 @@ import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.util.Log;
 
-import com.jollakernelupdater.utils.Config;
-import com.jollakernelupdater.utils.KernelInfo;
 import com.jollakernelupdater.utils.APIUtils;
 import com.jollakernelupdater.utils.BaseInfo;
+import com.jollakernelupdater.utils.Config;
+import com.jollakernelupdater.utils.KernelInfo;
 import com.jollakernelupdater.utils.PropUtils;
 
 public class CheckinReceiver extends BroadcastReceiver {

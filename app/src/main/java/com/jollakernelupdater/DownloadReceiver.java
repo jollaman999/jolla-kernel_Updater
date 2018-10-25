@@ -30,8 +30,8 @@ import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
 import com.jollakernelupdater.utils.BaseInfo;
-import com.jollakernelupdater.utils.KernelInfo;
 import com.jollakernelupdater.utils.DownloadStatus;
+import com.jollakernelupdater.utils.KernelInfo;
 
 import static android.support.v4.content.PermissionChecker.checkSelfPermission;
 

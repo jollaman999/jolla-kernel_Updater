@@ -23,6 +23,10 @@ import android.util.Log;
 
 import com.jollakernelupdater.R;
 
+import org.json.JSONObject;
+
+import java.util.Locale;
+
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
 import cz.msebera.android.httpclient.HttpStatus;
@@ -30,10 +34,6 @@ import cz.msebera.android.httpclient.client.HttpClient;
 import cz.msebera.android.httpclient.client.methods.HttpPost;
 import cz.msebera.android.httpclient.impl.client.HttpClientBuilder;
 import cz.msebera.android.httpclient.util.EntityUtils;
-
-import org.json.JSONObject;
-
-import java.util.Locale;
 
 public class APIUtils {
 

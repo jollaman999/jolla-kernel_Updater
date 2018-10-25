@@ -18,20 +18,20 @@
 package com.jollakernelupdater;
 
 import android.Manifest;
-import android.content.pm.PackageManager;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -40,8 +40,8 @@ import android.widget.Toast;
 import com.jollakernelupdater.utils.BaseDownloadDialogActivity;
 import com.jollakernelupdater.utils.Config;
 import com.jollakernelupdater.utils.KernelInfo;
-import com.jollakernelupdater.utils.Utils;
 import com.jollakernelupdater.utils.PropUtils;
+import com.jollakernelupdater.utils.Utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

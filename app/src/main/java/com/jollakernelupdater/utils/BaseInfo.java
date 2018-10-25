@@ -34,8 +34,8 @@ import android.util.Log;
 
 import com.jollakernelupdater.DownloadBarFragment;
 import com.jollakernelupdater.DownloadReceiver;
-import com.jollakernelupdater.jollakernelUpdaterActivity;
 import com.jollakernelupdater.R;
+import com.jollakernelupdater.jollakernelUpdaterActivity;
 
 import org.json.JSONObject;
 

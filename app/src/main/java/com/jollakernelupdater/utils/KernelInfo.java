@@ -21,8 +21,8 @@ import android.content.Context;
 
 import com.jollakernelupdater.DownloadReceiver;
 import com.jollakernelupdater.DownloadsActivity;
-import com.jollakernelupdater.jollakernelUpdaterActivity;
 import com.jollakernelupdater.R;
+import com.jollakernelupdater.jollakernelUpdaterActivity;
 
 import java.io.File;
 import java.util.Date;

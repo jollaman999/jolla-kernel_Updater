@@ -17,7 +17,6 @@
 
 package com.jollakernelupdater;
 
-import android.support.v7.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -25,6 +24,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
+import android.support.v7.app.ActionBar;
 import android.widget.Toast;
 
 import com.jollakernelupdater.utils.BaseDownloadDialogActivity;
