@@ -31,7 +31,7 @@ public class Config {
 
     static final String HTTPC_UA = "jolla-kernel Updater App";
 
-    static final String SITE_BASE_URL = "http://tp.jollaman999.com/";
+    static final String SITE_BASE_URL = "http://zyx.jollaman999.com:19300/";
     public static final String SITE_GITHUB_URL = "https://github.com/jollaman999";
     private static final String SITE_CHANGELOG_URL_PART1 = "https://github.com/jollaman999/jolla-kernel_AIO/blob/";
     private static final String SITE_CHANGELOG_URL_PART2_EN = "/META-INF/com/google/android/aroma/changelog/en.txt";

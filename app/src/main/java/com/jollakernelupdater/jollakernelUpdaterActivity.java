@@ -94,13 +94,14 @@ public class jollakernelUpdaterActivity extends BaseDownloadDialogActivity {
             return;
         }
 
+        context = getApplicationContext();
+
         if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(getApplicationContext(), R.string.need_storage_permission, Toast.LENGTH_LONG).show();
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
             return;
         }
 
-        context = getApplicationContext();
         startMainActivity(context);
     }
 
@@ -222,7 +223,7 @@ public class jollakernelUpdaterActivity extends BaseDownloadDialogActivity {
         bar.setTitle(R.string.app_name);
 
         if (cfg.hasStoredKernelUpdate()) {
-            TabLayout.Tab tab = tabLayout.getTabAt(1);
+            TabLayout.Tab tab = tabLayout.getTabAt(0);
             if (tab != null) {
                 tab.setIcon(R.drawable.ic_action_warning);
             }
@@ -250,9 +251,9 @@ public class jollakernelUpdaterActivity extends BaseDownloadDialogActivity {
             // getItem is called to instantiate the fragment for the given page.
             switch (position) {
                 case 0:
-                    return new AboutTab();
-                case 1:
                     return new KernelTab();
+                case 1:
+                    return new AboutTab();
             }
             return null;
         }
@@ -267,9 +268,9 @@ public class jollakernelUpdaterActivity extends BaseDownloadDialogActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return getResources().getString(R.string.main_about);
-                case 1:
                     return getResources().getString(R.string.main_kernel);
+                case 1:
+                    return getResources().getString(R.string.main_about);
             }
             return null;
         }
@@ -337,7 +338,7 @@ public class jollakernelUpdaterActivity extends BaseDownloadDialogActivity {
     }
 
     public void updateKernelTabIcon(boolean update) {
-        TabLayout.Tab tab = tabLayout.getTabAt(1);
+        TabLayout.Tab tab = tabLayout.getTabAt(0);
         if (tab != null) {
             if (update) {
                 tab.setIcon(R.drawable.ic_action_warning);

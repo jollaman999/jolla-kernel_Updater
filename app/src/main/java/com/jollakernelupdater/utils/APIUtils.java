@@ -20,6 +20,7 @@ package com.jollakernelupdater.utils;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.jollakernelupdater.R;
 
@@ -39,7 +40,8 @@ public class APIUtils {
 
     public static void fetchKernelInfo(Context ctx, APICallback callback) {
         if (!PropUtils.isKernelOtaEnabled()) {
-            if (callback != null) callback.onError(ctx.getString(R.string.kernel_unsupported), null);
+            if (callback != null)
+                callback.onError(ctx.getString(R.string.kernel_unsupported), null);
             return;
         }
 
@@ -106,6 +108,8 @@ public class APIUtils {
             endpoint += android.os.Build.DEVICE.toLowerCase(Locale.US) + ".json";
             Log.v(Config.LOG_TAG + "serverCall", endpoint);
 
+            Log.v(Config.LOG_TAG + "serverCall", Config.SITE_BASE_URL + endpoint);
+
             try {
                 HttpClient http = HttpClientBuilder.create().build();
 
@@ -156,17 +160,35 @@ public class APIUtils {
 
     interface APICallback {
         void onStart(APITask task);
+
         void onSuccess(String message, JSONObject respObj);
+
         void onError(String message, JSONObject respObj);
+
         void onCancel();
+
         void onComplete(boolean success);
     }
 
     static abstract class APIAdapter implements APICallback {
-        @Override public void onStart(APITask task) { }
-        @Override public void onSuccess(String message, JSONObject respObj) { }
-        @Override public void onError(String message, JSONObject respObj) { }
-        @Override public void onCancel() { }
-        @Override public void onComplete(boolean success) { }
+        @Override
+        public void onStart(APITask task) {
+        }
+
+        @Override
+        public void onSuccess(String message, JSONObject respObj) {
+        }
+
+        @Override
+        public void onError(String message, JSONObject respObj) {
+        }
+
+        @Override
+        public void onCancel() {
+        }
+
+        @Override
+        public void onComplete(boolean success) {
+        }
     }
 }

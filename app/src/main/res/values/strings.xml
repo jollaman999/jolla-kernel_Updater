@@ -89,7 +89,7 @@
     <string name="toast_downloading">Your download is still running, check notifications for progress…</string>
 
     <string name="about_ota_title" translatable="false">jolla-kernel Updater</string>
-    <string name="about_ota_summary">Copyright © 2017\nBy jollaman999\n(Based on OTA Updater)\n\nAll of kernel and updater sources are available in my Github.\n(Tap to visit my Github.)</string>
+    <string name="about_ota_summary">Copyright © 2018\nBy jollaman999\n(Based on OTA Updater)\n\nAll of kernel and updater sources are available in my Github.\n(Tap to visit my Github.)</string>
     <string name="about_version_title">Version</string>
     <string name="about_license_title">Open-Source License</string>
     <string name="about_contrib_title">Contributors</string>
@@ -150,5 +150,9 @@
     <string name="root_check_failed">Failed to check root status! Is \'whoami\' command missing?</string>
     <string name="su_exec_error">Error occurred while executing SU command. Is it enabled?</string>
     <string name="unsupported_su">Unsupported SU binary! Please install latest version of Magisk or SuperSU.</string>
+    <string name="install_recovery">Install recovery</string>
+    <string name="install_recovery_summary">Install TWRP recovery for install jolla-kernel.</string>
+    <string name="install_recovery_success">Recovery is installed successfully.</string>
+    <string name="install_recovery_fail">Failed to install recovery!</string>
 
 </resources>

@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Objects;
 
 public class KernelTab extends ListFragment {
     protected static final String KEY_TITLE = "title";
@@ -62,7 +63,7 @@ public class KernelTab extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        cfg = Config.getInstance(getActivity().getApplicationContext());
+        cfg = Config.getInstance(Objects.requireNonNull(getActivity()).getApplicationContext());
 
         HashMap<String, Object> item;
 
